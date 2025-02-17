@@ -1,16 +1,37 @@
+/* Variables para colores y modo oscuro */
+:root {
+    --primary-bg: #f4f4f4;
+    --primary-text: #333;
+    --secondary-bg: #333;
+    --secondary-text: #fff;
+    --accent-bg: #f9f9f9;
+    --accent-border: #333;
+}
+
+/* Modo oscuro */
+.dark-mode {
+    --primary-bg: #121212;
+    --primary-text: #e0e0e0;
+    --secondary-bg: #1e1e1e;
+    --secondary-text: #f4f4f4;
+    --accent-bg: #252525;
+    --accent-border: #555;
+}
+
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    padding: 15px 20px;
     text-align: center;
 }
 
@@ -20,16 +41,42 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 10px 15px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: var(--secondary-text);
     text-decoration: none;
     font-weight: bold;
+}
+
+/* Botón para cambiar a modo oscuro */
+.toggle-dark-mode {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    border-radius: 5px;
+}
+
+.toggle-dark-mode:hover {
+    opacity: 0.8;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 main {
@@ -54,34 +101,64 @@ p {
     line-height: 1.6;
 }
 
+/* Estilos para la tabla */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
-table th,
-table td {
-    border: 1px solid #ddd;
+table th, table td {
+    border: 1px solid var(--accent-border);
     padding: 8px;
     text-align: left;
 }
 
 table th {
-    background-color: #f4f4f4;
+    background-color: var(--accent-bg);
 }
 
+/* Cita estilizada */
 blockquote {
-    background-color: #f9f9f9;
-    border-left: 5px solid #333;
+    background-color: var(--accent-bg);
+    border-left: 5px solid var(--accent-border);
     margin: 20px 0;
     padding: 10px 20px;
     font-style: italic;
 }
 
+/* Estilos para el formulario de contacto */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--accent-bg);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--accent-border);
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--secondary-bg);
+    color: var(--secondary-text);
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
